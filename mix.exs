@@ -34,7 +34,9 @@ defmodule AlphaVantage.MixProject do
 
   defp package do
     [
-      licenses: ["MIT"]
+      maintainers: ["Cameron Kurth"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/Cameron-Kurth/alpha_vantage"}
     ]
   end
 end
