@@ -11,7 +11,7 @@ defmodule AlphaVantage.MixProject do
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
-      source_url: "https://github.com/Cameron-Kurth/alpha_vantage"
+      source_url: "https://github.com/Cameron-Kurth/alpha_vantage",
       docs: [
         extras: ["README.md"],
         main: "README"
