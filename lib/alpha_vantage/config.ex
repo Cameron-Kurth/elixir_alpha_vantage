@@ -1,0 +1,143 @@
+defmodule AlphaVantage.Config do
+  @moduledoc false
+
+  @url "https://www.alphavantage.co/query"
+
+  @param_keys [
+    :function,
+    :symbol,
+    :interval,
+    :outputsize,
+    :datatype,
+    :apikey,
+    :keywords,
+    :from_currency,
+    :to_currency,
+    :from_symbol,
+    :to_symbol,
+    :market,
+    :time_period,
+    :series_type,
+    :fastlimit,
+    :slowlimit,
+    :fastperiod,
+    :slowperiod,
+    :signalperiod,
+    :fastmatype,
+    :slowmatype,
+    :signalmatype,
+    :fastkperiod,
+    :slowkperiod,
+    :slowdperiod,
+    :slowkmatype,
+    :slowdmatype,
+    :fastdperiod,
+    :fastdmatype,
+    :matype,
+    :timeperiod1,
+    :timeperiod2,
+    :timeperiod3,
+    :nbdevup,
+    :nbdevdn,
+    :acceleration,
+    :maximum
+  ]
+
+  @functions [
+    "TIME_SERIES_INTRADAY",
+    "TIME_SERIES_DAILY",
+    "TIME_SERIES_DAILY_ADJUSTED",
+    "TIME_SERIES_WEEKLY",
+    "TIME_SERIES_WEEKLY_ADJUSTED",
+    "TIME_SERIES_MONTHLY",
+    "TIME_SERIES_MONTHLY_ADJUSTED",
+    "GLOBAL_QUOTE",
+    "SYMBOL_SEARCH",
+    "CURRENCY_EXCHANGE_RATE",
+    "FX_INTRADAY",
+    "FX_DAILY",
+    "FX_WEEKLY",
+    "FX_MONTHLY",
+    "CURRENCY_EXCHANGE_RATE",
+    "DIGITAL_CURRENCY_DAILY",
+    "DIGITAL_CURRENCY_WEEKLY",
+    "DIGITAL_CURRENCY_MONTHLY",
+    "SMA",
+    "EMA",
+    "WMA",
+    "DEMA",
+    "TEMA",
+    "TRIMA",
+    "KAMA",
+    "MAMA",
+    "T3",
+    "MACD",
+    "MACDEXT",
+    "STOCH",
+    "STOCHF",
+    "RSI",
+    "STOCHRSI",
+    "WILLR",
+    "ADX",
+    "ADXR",
+    "APO",
+    "PPO",
+    "MOM",
+    "BOP",
+    "CCI",
+    "CMO",
+    "ROC",
+    "ROCR",
+    "AROON",
+    "AROONOSC",
+    "MFI",
+    "TRIX",
+    "ULTOSC",
+    "DX",
+    "MINUS_DI",
+    "PLUS_DI",
+    "MINUS_DM",
+    "PLUS_DM",
+    "BBANDS",
+    "MIDPOINT",
+    "MIDPRICE",
+    "SAR",
+    "TRANGE",
+    "ATR",
+    "NATR",
+    "AD",
+    "ADOSC",
+    "OBV",
+    "HT_TRENDLINE",
+    "HT_SINE",
+    "HT_TRENDMODE",
+    "HT_DCPERIOD",
+    "HT_DCPHASE",
+    "HT_PHASOR",
+    "SECTOR"
+  ]
+
+  @intervals [
+    "1min",
+    "5min",
+    "15min",
+    "30min",
+    "60min",
+    "daily",
+    "weekly",
+    "monthly"
+  ]
+
+  @series_types [
+    "close",
+    "open",
+    "high",
+    "low"
+  ]
+
+  def url(), do: @url
+  def param_keys(), do: @param_keys
+  def functions(), do: @functions
+  def intervals(), do: @intervals
+  def series_types(), do: @series_types
+end
