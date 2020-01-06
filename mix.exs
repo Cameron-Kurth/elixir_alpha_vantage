@@ -14,7 +14,7 @@ defmodule AlphaVantage.MixProject do
       source_url: "https://github.com/Cameron-Kurth/alpha_vantage",
       docs: [
         extras: ["README.md"],
-        main: "README"
+        main: "readme"
       ]
     ]
   end

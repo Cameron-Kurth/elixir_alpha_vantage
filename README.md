@@ -1,6 +1,7 @@
 # Alpha Vantage
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Hex version badge](https://img.shields.io/hexpm/v/alpha_vantage.svg)](https://hex.pm/packages/alpha_vantage)
 
 A lightweight Elixir wrapper for the [Alpha Vantage API](https://www.alphavantage.co/).
 
