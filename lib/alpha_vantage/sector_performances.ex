@@ -22,7 +22,7 @@ defmodule AlphaVantage.SectorPerformances do
     *Please note that `"map"` will return unsorted. Also, `"csv"` and thus, `"lists"`, are not yet supported by Alpha Vantage for this function.
 
   """
-  @spec sector(List.t()) :: {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec sector(list()) :: {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def sector(opts \\ []) do
     params = [function: "SECTOR"]
     AlphaVantage.query(Keyword.merge(params, opts))

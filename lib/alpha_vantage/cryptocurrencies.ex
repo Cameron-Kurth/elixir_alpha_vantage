@@ -35,8 +35,8 @@ defmodule AlphaVantage.Cryptocurrencies do
     *Please note that `"map"` will return unsorted. Also, `"csv"` and thus, `"lists"`, are not yet supported by Alpha Vantage for this function.
 
   """
-  @spec exchange_rate(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec exchange_rate(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def exchange_rate(from_currency, to_currency, opts \\ []) do
     params = [
       function: "CURRENCY_EXCHANGE_RATE",
@@ -83,8 +83,8 @@ defmodule AlphaVantage.Cryptocurrencies do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec daily(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec daily(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def daily(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_DAILY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -126,8 +126,8 @@ defmodule AlphaVantage.Cryptocurrencies do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec weekly(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec weekly(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def weekly(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_WEEKLY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -169,8 +169,8 @@ defmodule AlphaVantage.Cryptocurrencies do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec monthly(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec monthly(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def monthly(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_MONTHLY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))

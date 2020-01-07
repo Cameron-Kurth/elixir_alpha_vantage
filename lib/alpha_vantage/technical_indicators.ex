@@ -46,8 +46,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec sma(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec sma(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def sma(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "SMA",
@@ -103,8 +103,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ema(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ema(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "EMA",
@@ -160,8 +160,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec wma(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec wma(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def wma(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "WMA",
@@ -217,8 +217,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec dema(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec dema(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def dema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "DEMA",
@@ -274,8 +274,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec tema(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec tema(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def tema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TEMA",
@@ -331,8 +331,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec trima(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec trima(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def trima(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TRIMA",
@@ -388,8 +388,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec kama(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec kama(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def kama(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "KAMA",
@@ -445,8 +445,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec mama(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec mama(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def mama(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MAMA",
@@ -492,8 +492,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec vwap(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec vwap(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def vwap(symbol, interval, opts \\ []) do
     params = [
       function: "VWAP",
@@ -547,8 +547,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec t3(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec t3(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def t3(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "T3",
@@ -616,8 +616,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec macd(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec macd(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def macd(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MACD",
@@ -700,8 +700,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec macdext(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec macdext(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def macdext(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MACDEXT",
@@ -769,8 +769,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec stoch(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec stoch(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def stoch(symbol, interval, opts \\ []) do
     params = [
       function: "STOCH",
@@ -827,8 +827,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec stochf(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec stochf(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def stochf(symbol, interval, opts \\ []) do
     params = [
       function: "STOCHF",
@@ -882,8 +882,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec rsi(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec rsi(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def rsi(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "RSI",
@@ -952,8 +952,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec stochrsi(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec stochrsi(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def stochrsi(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "STOCHRSI",
@@ -1004,8 +1004,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec willr(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec willr(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def willr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "WILLR",
@@ -1055,8 +1055,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec adx(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec adx(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def adx(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ADX",
@@ -1106,8 +1106,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec adxr(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec adxr(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def adxr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ADXR",
@@ -1170,8 +1170,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec apo(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec apo(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def apo(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "APO",
@@ -1234,8 +1234,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ppo(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ppo(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ppo(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "PPO",
@@ -1290,8 +1290,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec mom(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec mom(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def mom(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MOM",
@@ -1337,8 +1337,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec bop(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec bop(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def bop(symbol, interval, opts \\ []) do
     params = [
       function: "BOP",
@@ -1387,8 +1387,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec cci(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec cci(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def cci(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "CCI",
@@ -1443,8 +1443,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec cmo(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec cmo(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def cmo(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "CMO",
@@ -1500,8 +1500,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec roc(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec roc(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def roc(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "ROC",
@@ -1557,8 +1557,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec rocr(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec rocr(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def rocr(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "ROCR",
@@ -1609,8 +1609,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec aroon(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec aroon(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def aroon(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "AROON",
@@ -1660,8 +1660,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec aroonosc(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec aroonosc(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def aroonosc(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "AROONOSC",
@@ -1711,8 +1711,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec mfi(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec mfi(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def mfi(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MFI",
@@ -1767,8 +1767,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec trix(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec trix(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def trix(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TRIX",
@@ -1829,8 +1829,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ultosc(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ultosc(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ultosc(symbol, interval, opts \\ []) do
     params = [
       function: "ULTOSC",
@@ -1879,8 +1879,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec dx(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec dx(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def dx(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "DX",
@@ -1930,8 +1930,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec minus_di(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec minus_di(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def minus_di(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MINUS_DI",
@@ -1981,8 +1981,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec plus_di(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec plus_di(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def plus_di(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "PLUS_DI",
@@ -2032,8 +2032,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec minus_dm(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec minus_dm(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def minus_dm(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MINUS_DM",
@@ -2083,8 +2083,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec plus_dm(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec plus_dm(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def plus_dm(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "PLUS_DM",
@@ -2154,8 +2154,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec bbands(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec bbands(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def bbands(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "BBANDS",
@@ -2212,8 +2212,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec midpoint(String.t(), String.t(), Integer.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec midpoint(String.t(), String.t(), integer(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def midpoint(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MIDPOINT",
@@ -2265,8 +2265,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec midprice(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec midprice(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def midprice(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MIDPRICE",
@@ -2321,8 +2321,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec sar(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec sar(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def sar(symbol, interval, opts \\ []) do
     params = [
       function: "SAR",
@@ -2366,8 +2366,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec trange(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec trange(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def trange(symbol, interval, opts \\ []) do
     params = [
       function: "TRANGE",
@@ -2416,8 +2416,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec atr(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec atr(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def atr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ATR",
@@ -2467,8 +2467,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec natr(String.t(), String.t(), Integer.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec natr(String.t(), String.t(), integer(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def natr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "NATR",
@@ -2513,8 +2513,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ad(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ad(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ad(symbol, interval, opts \\ []) do
     params = [
       function: "AD",
@@ -2568,8 +2568,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec adosc(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec adosc(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def adosc(symbol, interval, opts \\ []) do
     params = [
       function: "ADOSC",
@@ -2613,8 +2613,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec obv(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec obv(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def obv(symbol, interval, opts \\ []) do
     params = [
       function: "OBV",
@@ -2663,8 +2663,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_trendline(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_trendline(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_trendline(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_TRENDLINE",
@@ -2714,8 +2714,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_sine(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_sine(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_sine(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_SINE",
@@ -2765,8 +2765,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_trendmode(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_trendmode(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_trendmode(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_TRENDMODE",
@@ -2816,8 +2816,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_dcperiod(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_dcperiod(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_dcperiod(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_DCPERIOD",
@@ -2867,8 +2867,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_dcphase(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_dcphase(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_dcphase(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_DCPHASE",
@@ -2918,8 +2918,8 @@ defmodule AlphaVantage.TechnicalIndicators do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec ht_phasor(String.t(), String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec ht_phasor(String.t(), String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def ht_phasor(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_PHASOR",

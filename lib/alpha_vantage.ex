@@ -17,7 +17,7 @@ defmodule AlphaVantage do
   The Cryptocurrenies, Forex, StockTimeSeries, and TechnicalIndicators modules can be leveraged for more structured and explicit inputs, per function.
 
   """
-  @spec query(List.t() | Map.t()) :: {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec query(list() | map()) :: {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def query(params \\ [])
   def query(params) when is_map(params), do: params |> Map.to_list() |> query
 
@@ -62,7 +62,7 @@ defmodule AlphaVantage do
   Returns the list of parameter keys that are supported by Alpha Vantage.
 
   """
-  @spec get_param_keys() :: List.t()
+  @spec get_param_keys() :: list()
   def get_param_keys(), do: @param_keys
 
   # Ensures the parameter keys are supported by Alpha Vantage.
@@ -76,7 +76,7 @@ defmodule AlphaVantage do
   Returns the list of :function values that are supported by Alpha Vantage.
 
   """
-  @spec get_functions() :: List.t()
+  @spec get_functions() :: list()
   def get_functions(), do: @functions
 
   # Ensures the :function value is supported by Alpha Vantage.
@@ -89,7 +89,7 @@ defmodule AlphaVantage do
   Returns the list of :interval values that are supported by Alpha Vantage.
 
   """
-  @spec get_intervals() :: List.t()
+  @spec get_intervals() :: list()
   def get_intervals(), do: @intervals
 
   # Ensures the :interval value is supported by Alpha Vantage.
@@ -106,7 +106,7 @@ defmodule AlphaVantage do
   Returns the list of :series_type values that are supported by Alpha Vantage.
 
   """
-  @spec get_series_types() :: List.t()
+  @spec get_series_types() :: list()
   def get_series_types(), do: @series_types
 
   # Ensures the :series_type value is supported by Alpha Vantage.

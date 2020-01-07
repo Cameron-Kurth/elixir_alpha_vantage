@@ -45,8 +45,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec intraday(String.t(), String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec intraday(String.t(), String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def intraday(symbol, interval, opts \\ []) do
     params = [function: "TIME_SERIES_INTRADAY", symbol: symbol, interval: interval]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -88,8 +88,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec daily(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec daily(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def daily(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_DAILY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -131,8 +131,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec daily_adjusted(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec daily_adjusted(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def daily_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_DAILY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -167,8 +167,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec weekly(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec weekly(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def weekly(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_WEEKLY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -203,8 +203,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec weekly_adjusted(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec weekly_adjusted(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def weekly_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_WEEKLY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -239,8 +239,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec monthly(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec monthly(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def monthly(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_MONTHLY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -275,8 +275,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec monthly_adjusted(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec monthly_adjusted(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def monthly_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_MONTHLY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -310,8 +310,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec quote(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec quote(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def quote(symbol, opts \\ []) do
     params = [function: "GLOBAL_QUOTE", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -346,8 +346,8 @@ defmodule AlphaVantage.StockTimeSeries do
     *Please note that `"map"` and `"lists"` will both return unsorted.
 
   """
-  @spec search(String.t(), List.t()) ::
-          {:atom, Map.t()} | {:atom, List.t()} | {:atom, String.t()}
+  @spec search(String.t(), list()) ::
+          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
   def search(keywords, opts \\ []) do
     params = [function: "SYMBOL_SEARCH", keywords: keywords]
     AlphaVantage.query(Keyword.merge(params, opts))
