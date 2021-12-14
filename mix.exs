@@ -27,7 +27,6 @@ defmodule AlphaVantage.MixProject do
     [
       {:jason, "~> 1.0"},
       {:httpoison, "~> 1.6"},
-      {:nimble_csv, "~> 0.6"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false}
     ]
   end

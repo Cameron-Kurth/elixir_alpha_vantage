@@ -19,10 +19,10 @@ defmodule AlphaVantage.SectorPerformances do
     - `"map"` returns a map;
     - `"json"` returns JSON format;
 
-    *Please note that `"map"` will return unsorted. Also, `"csv"` and thus, `"lists"`, are not yet supported by Alpha Vantage for this function.
+    *Please note that `"csv"` is not yet supported by Alpha Vantage for this function.
 
   """
-  @spec sector(list()) :: {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec sector(Keyword.t()) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def sector(opts \\ []) do
     params = [function: "SECTOR"]
     AlphaVantage.query(Keyword.merge(params, opts))

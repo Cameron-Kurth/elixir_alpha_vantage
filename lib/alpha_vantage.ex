@@ -17,7 +17,7 @@ defmodule AlphaVantage do
   The Cryptocurrenies, Forex, StockTimeSeries, and TechnicalIndicators modules can be leveraged for more structured and explicit inputs, per function.
 
   """
-  @spec query(list() | map()) :: {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec query(Keyword.t() | map) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def query(params \\ [])
   def query(params) when is_map(params), do: params |> Map.to_list() |> query
 
@@ -28,7 +28,6 @@ defmodule AlphaVantage do
     request_datatype =
       case datatype do
         "map" -> "json"
-        "lists" -> "csv"
         _ -> datatype
       end
 
@@ -62,7 +61,7 @@ defmodule AlphaVantage do
   Returns the list of parameter keys that are supported by Alpha Vantage.
 
   """
-  @spec get_param_keys() :: list()
+  @spec get_param_keys() :: list
   def get_param_keys(), do: @param_keys
 
   # Ensures the parameter keys are supported by Alpha Vantage.
@@ -76,7 +75,7 @@ defmodule AlphaVantage do
   Returns the list of :function values that are supported by Alpha Vantage.
 
   """
-  @spec get_functions() :: list()
+  @spec get_functions() :: list
   def get_functions(), do: @functions
 
   # Ensures the :function value is supported by Alpha Vantage.
@@ -89,7 +88,7 @@ defmodule AlphaVantage do
   Returns the list of :interval values that are supported by Alpha Vantage.
 
   """
-  @spec get_intervals() :: list()
+  @spec get_intervals() :: list
   def get_intervals(), do: @intervals
 
   # Ensures the :interval value is supported by Alpha Vantage.
@@ -106,7 +105,7 @@ defmodule AlphaVantage do
   Returns the list of :series_type values that are supported by Alpha Vantage.
 
   """
-  @spec get_series_types() :: list()
+  @spec get_series_types() :: list
   def get_series_types(), do: @series_types
 
   # Ensures the :series_type value is supported by Alpha Vantage.
@@ -126,7 +125,6 @@ defmodule AlphaVantage do
   defp decode!(response, datatype) do
     case datatype do
       "map" -> Jason.decode!(response)
-      "lists" -> NimbleCSV.RFC4180.parse_string(response)
       "json" -> response
       "csv" -> response
     end

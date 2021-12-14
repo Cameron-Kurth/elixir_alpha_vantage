@@ -32,11 +32,11 @@ defmodule AlphaVantage.Forex do
     - `"map"` returns a map;
     - `"json"` returns JSON format;
 
-    *Please note that `"map"` will return unsorted. Also, `"csv"` and thus, `"lists"`, are not yet supported by Alpha Vantage for this function.
+    *Please note that `"csv"` and is not yet supported by Alpha Vantage for this function.
 
   """
-  @spec exchange_rate(String.t(), String.t(), list()) ::
-          {:atom, map()} | {:atom, String.t()}
+  @spec exchange_rate(String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def exchange_rate(from_currency, to_currency, opts \\ []) do
     params = [
       function: "CURRENCY_EXCHANGE_RATE",
@@ -83,17 +83,14 @@ defmodule AlphaVantage.Forex do
   - `:datatype`
 
     By default, `datatype: "map"`.
-    Strings `"map"`, `lists`, `"json"`, and `"csv"` are accepted with the following specifications:
+    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
     - `"map"` returns a map;
-    - `"lists"` returns a list of lists;
     - `"json"` returns JSON format;
-    - `"csv"` returns a CSV (comma separated value) file.
-
-    *Please note that `"map"` and `"lists"` will both return unsorted.
+    - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec intraday(String.t(), String.t(), String.t(), list()) ::
-          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec intraday(String.t(), String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def intraday(from_symbol, to_symbol, interval, opts \\ []) do
     params = [
       function: "FX_INTRADAY",
@@ -136,17 +133,14 @@ defmodule AlphaVantage.Forex do
   - `:datatype`
 
     By default, `datatype: "map"`.
-    Strings `"map"`, `lists`, `"json"`, and `"csv"` are accepted with the following specifications:
+    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
     - `"map"` returns a map;
-    - `"lists"` returns a list of lists;
     - `"json"` returns JSON format;
-    - `"csv"` returns a CSV (comma separated value) file.
-
-    *Please note that `"map"` and `"lists"` will both return unsorted.
+    - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec daily(String.t(), String.t(), list()) ::
-          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec daily(String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def daily(from_symbol, to_symbol, opts \\ []) do
     params = [function: "FX_DAILY", from_symbol: from_symbol, to_symbol: to_symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -177,17 +171,14 @@ defmodule AlphaVantage.Forex do
   - `:datatype`
 
     By default, `datatype: "map"`.
-    Strings `"map"`, `lists`, `"json"`, and `"csv"` are accepted with the following specifications:
+    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
     - `"map"` returns a map;
-    - `"lists"` returns a list of lists;
     - `"json"` returns JSON format;
-    - `"csv"` returns a CSV (comma separated value) file.
-
-    *Please note that `"map"` and `"lists"` will both return unsorted.
+    - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec weekly(String.t(), String.t(), list()) ::
-          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec weekly(String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def weekly(from_symbol, to_symbol, opts \\ []) do
     params = [function: "FX_WEEKLY", from_symbol: from_symbol, to_symbol: to_symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -218,17 +209,14 @@ defmodule AlphaVantage.Forex do
   - `:datatype`
 
     By default, `datatype: "map"`.
-    Strings `"map"`, `lists`, `"json"`, and `"csv"` are accepted with the following specifications:
+    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
     - `"map"` returns a map;
-    - `"lists"` returns a list of lists;
     - `"json"` returns JSON format;
-    - `"csv"` returns a CSV (comma separated value) file.
-
-    *Please note that `"map"` and `"lists"` will both return unsorted.
+    - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec monthly(String.t(), String.t(), list()) ::
-          {:atom, map()} | {:atom, list()} | {:atom, String.t()}
+  @spec monthly(String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
   def monthly(from_symbol, to_symbol, opts \\ []) do
     params = [function: "FX_MONTHLY", from_symbol: from_symbol, to_symbol: to_symbol]
     AlphaVantage.query(Keyword.merge(params, opts))

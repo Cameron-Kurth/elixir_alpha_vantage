@@ -4,46 +4,47 @@ defmodule AlphaVantage.Config do
   @url "https://www.alphavantage.co/query"
 
   @param_keys [
-    :function,
-    :symbol,
-    :interval,
-    :outputsize,
-    :datatype,
+    :acceleration,
+    :adjusted,
     :apikey,
-    :keywords,
-    :from_currency,
-    :to_currency,
-    :from_symbol,
-    :to_symbol,
-    :market,
-    :time_period,
-    :series_type,
-    :fastlimit,
-    :slowlimit,
-    :fastperiod,
-    :slowperiod,
-    :signalperiod,
-    :fastmatype,
-    :slowmatype,
-    :signalmatype,
+    :datatype,
+    :fastdmatype,
+    :fastdperiod,
     :fastkperiod,
-    :slowkperiod,
+    :fastlimit,
+    :fastmatype,
+    :fastperiod,
+    :from_currency,
+    :from_symbol,
+    :function,
+    :interval,
+    :keywords,
+    :market,
+    :matype,
+    :maximum,
+    :nbdevup,
+    :nbdevdn,
+    :outputsize,
+    :series_type,
+    :signalmatype,
+    :signalperiod,
+    :slowdmatype,
     :slowdperiod,
     :slowkmatype,
-    :slowdmatype,
-    :fastdperiod,
-    :fastdmatype,
-    :matype,
+    :slowkperiod,
+    :slowlimit,
+    :slowmatype,
+    :slowperiod,
+    :symbol,
+    :time_period,
     :timeperiod1,
     :timeperiod2,
     :timeperiod3,
-    :nbdevup,
-    :nbdevdn,
-    :acceleration,
-    :maximum
+    :to_currency,
+    :to_symbol
   ]
 
-  @functions [
+  @time_series_functions [
     "TIME_SERIES_INTRADAY",
     "TIME_SERIES_DAILY",
     "TIME_SERIES_DAILY_ADJUSTED",
@@ -52,16 +53,27 @@ defmodule AlphaVantage.Config do
     "TIME_SERIES_MONTHLY",
     "TIME_SERIES_MONTHLY_ADJUSTED",
     "GLOBAL_QUOTE",
-    "SYMBOL_SEARCH",
+    "SYMBOL_SEARCH"
+  ]
+
+  @forex_functions [
     "CURRENCY_EXCHANGE_RATE",
     "FX_INTRADAY",
     "FX_DAILY",
     "FX_WEEKLY",
-    "FX_MONTHLY",
+    "FX_MONTHLY"
+  ]
+
+  @crypto_functions [
     "CURRENCY_EXCHANGE_RATE",
+    "CRYPTO_RATING",
+    "CRYPTO_INTRADAY",
     "DIGITAL_CURRENCY_DAILY",
     "DIGITAL_CURRENCY_WEEKLY",
-    "DIGITAL_CURRENCY_MONTHLY",
+    "DIGITAL_CURRENCY_MONTHLY"
+  ]
+
+  @technical_indicator_functions [
     "SMA",
     "EMA",
     "WMA",
@@ -113,8 +125,7 @@ defmodule AlphaVantage.Config do
     "HT_TRENDMODE",
     "HT_DCPERIOD",
     "HT_DCPHASE",
-    "HT_PHASOR",
-    "SECTOR"
+    "HT_PHASOR"
   ]
 
   @intervals [
@@ -137,7 +148,12 @@ defmodule AlphaVantage.Config do
 
   def url(), do: @url
   def param_keys(), do: @param_keys
-  def functions(), do: @functions
+
+  def functions(),
+    do:
+      @time_series_functions ++
+        @forex_functions ++ @crypto_functions ++ @technical_indicator_functions
+
   def intervals(), do: @intervals
   def series_types(), do: @series_types
 end
