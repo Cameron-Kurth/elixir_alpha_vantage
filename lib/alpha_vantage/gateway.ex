@@ -1,7 +1,5 @@
 defmodule AlphaVantage.Gateway do
-  @moduledoc """
-  Interface to the AlphaVantage API (https://www.alphavantage.co/documentation).
-  """
+  @moduledoc false
 
   @url "https://www.alphavantage.co/query"
 
