@@ -29,11 +29,11 @@ config :alpha_vantage,
   recv_timeout: 5_000
 ```
 
-Note that certain requests to the Alpha Vantage API regularly take longer than HTTPoison's default timeout of 500ms, hence the configurability for a higher tolerance.
+Note that certain requests to the Alpha Vantage API regularly take longer than HTTPoison's default timeout of 5000ms, hence the configurability for a higher tolerance.
 
 ## Usage
 
-The modules and their respective functions and naming conventions within this library are meant to mirror the Alpha Vantage API documentation as closely as possible for easy cross-referencing and implementation. The only major divergence from this approach is the `AlphaVantage.query/1` function described immediately below.
+The modules and their respective functions and naming conventions within this library are meant to mirror the Alpha Vantage API documentation as closely as possible for easy cross-referencing and implementation. The only notable divergence from this approach is the `AlphaVantage.query/1` function described immediately below.
 
 ### Query
 
@@ -46,10 +46,13 @@ iex> AlphaVantage.query(function: "GLOBAL_QUOTE", symbol: "DJIA", datatype: "csv
  "symbol,open,high,low,price,volume,latestDay,previousClose,change,changePercent\r\nDJIA,28553.3301,28716.3105,28500.3594,28634.8809,239590000,2020-01-03,28868.8008,-233.9199,-0.8103%\r\n"}
 ```
 
-Note: this method will inform you if invalid parameters are passed.
+Note: this method will inform you if invalid functions or parameters are passed.
 ```elixir
-iex> AlphaVantage.query(function: "QUOTE", symbol: "DJIA", datatype: "csv")
-{:error, "Invalid function 'QUOTE'."}
+iex> AlphaVantage.query(function: "QUOTE", symbol: "DJIA")
+{:error, "This API function (QUOTE) does not exist."}
+
+iex> AlphaVantage.query(function: "GLOBAL_QUOTE", s: "DJIA")
+{:error, "Invalid API call. Please retry or visit the documentation (https://www.alphavantage.co/documentation/) for GLOBAL_QUOTE."}
 ```
 
 Parameters may also be passed as a map.
@@ -78,16 +81,14 @@ iex> AlphaVantage.query(%{function: "EMA", symbol: "SPY", interval: "30min", tim
  }}
 ```
 
-### Stock Time Series
-Functions within the `AlphaVantage.StockTimeSeries` module will accept required parameter values as individual arguments, along with optional parameters as a keyword list.
+### Stock Time Series Example
 ```elixir
 iex> AlphaVantage.StockTimeSeries.monthly("DJIA", datatype: "json")
 {:ok,
  "{\n    \"Meta Data\": {\n        \"1. Information\": \"Monthly Prices (open, high, low, close) and Volumes\",\n        \"2. Symbol\": \"DJIA\",\n        \"3. Last Refreshed\": \"2020-01-03\",\n        \"4. Time Zone\": \"US/Eastern\"\n    },\n    \"Monthly Time Series\": {\n        \"2020-01-03\": {\n            \"1. open\": \"28638.9707\",\n            \"2. high\": \"28872.8008\",\n            \"3. low\": \"10000.0000\",\n            \"4. close\": \"28634.8809\",\n            \"5. volume\": \"491410000\"\n        },\n        \"2019-12-31\": {\n            \"1. open\": \"28109.7402\",\n            \"2. high\": \"28701.6602\",\n            \"3. low\": \"27325.1309\",\n            \"4. close\": \"28538.4395\",\n            \"5. volume\": \"5086880000\"\n        },\n        \"2019-11-29\": {\n            \"1. open\": \"27142.9492\",\n            \"2. high\": \"28174.9707\",\n            \"3. low\": \"27142.9492\",\n            \"4. close\": \"28051.4102\",\n            \"5. volume\": \"4925180000\"\n        },\n        \"2019-10-31\": {\n            \"1. open\": \"26962.5391\",\n            \"2. high\": \"27204.3594\",\n            \"3. low\": \"25743.4609\",\n            \"4. close\": \"27046.2305\",\n            \"5. volume\": \"5658040000\"\n        },\n        \"2019-09-30\": {\n            \"1. open\": \"26198.2598\",\n            \"2. high\": \"27306.7305\",\n            \"3. low\": \"25978.2207\",\n            \"4. close\": \"26916.8301\",\n            \"5. volume\": \"5045520000\"\n        },\n        \"2019-08-30\": {\n            \"1. open\": \"26879.8594\",\n            \"2. high\": \"27175.5898\",\n            \"3. low\": \"25339.5996\",\n            \"4. close\": \"26403.2793\",\n            \"5. volume\": \"8170730000\"\n        },\n        \"2019-07-31\": {\n            \"1. open\": \"26805.8594\",\n            \"2. high\": \"27398.6797\",\n            \"3. low\": \"26616.2109\",\n            \"4. close\": \"26864.2695\",\n            \"5. volume\": \"5199240000\"\n        },\n        \"2019-06-28\": {\n            \"1. open\": \"24830.1602\",\n            \"2. high\": \"26907.3691\",\n            \"3. low\": \"24680.5703\",\n            \"4. close\": \"26599.9609\",\n            \"5. volume\": \"5544390000\"\n        },\n        \"2019-05-31\": {\n            \"1. open\": \"26639.0605\",\n            \"2. high\": \"26689.3906\",\n            \"3. low\": \"24809.5098\",\n            \"4. close\": \"24815.0391\",\n            \"5. volume\": \"6358230000\"\n        },\n        \"2019-04-30\": {\n            \"1. open\": \"26075.0996\",\n            \"2. high\": \"26695.9609\",\n            \"3. low\": \"26062.5898\",\n            \"4. close\": \"26592.9102\",\n            \"5. volume\": \"5854600000\"\n        },\n        \"2019-03-29\": {\n            \"1. open\": \"26019.6699\",\n            \"2. high\": \"26155.9805\",\n            \"3. low\": \"25208.0000\",\n            \"4. close\": \"25928.6797\",\n            \"5. volume\": \"6734060000\"\n        },\n        \"2019-02-28\": {\n            \"1. open\": \"25025.3105\",\n            \"2. high\": \"26241.4199\",\n            \"3. low\": \"24883.0391\",\n            \"4. close\": \"25916.0000\",\n            \"5. volume\": \"5434540000\"\n        },\n        \"2019-01-31\": {\n            \"1. open\": \"23058.6094\",\n            \"2. high\": \"25109.6191\",\n            \"3. low\": \"22638.4102\",\n            \"4. close\": \"24999.6699\",\n            \"5. volume\": \"7189200000\"\n        },\n        \"2018-12-31\": {\n            \"1. open\": \"25779.5703\",\n            \"2. high\": \"25980.2109\",\n            \"3. low\": \"21712.5293\",\n            \"4. close\": \"23327.4609\",\n            \"5. volume\": \"8101540000\"\n        },\n        \"2018-11-30\": {\n            \"1. open\": \"25142.0801\",\n            \"2. high\": \"26277.8203\",\n            \"3. low\": \"24268.7402\",\n            \"4. close\": \"25538.4609\",\n            \"5. volume\": \"7226940000\"\n        },\n        \"2018-10-31\": {\n            \"1. open\": \"26598.3594\",\n            \"2. high\": \"26951.8105\",\n            \"3. low\": \"24122.2305\",\n            \"4. close\": \"25115.7598\",\n            \"5. volume\": \"8373350000\"\n        },\n        \"2018-09-28\": {\n            \"1. open\": \"25916.0703\",\n            \"2. high\": \"26769.1602\",\n            \"3. low\": \"25754.3203\",\n            \"4. close\": \"26458.3105\",\n            \"5. volume\": \"5262500000\"\n        },\n        \"2018-08-31\": {\n            \"1. open\": \"25461.6309\",\n            \"2. high\": \"26167.93" <> ...}
  ```
 
-### Forex (FX)
-Functions within the `AlphaVantage.Forex` module will accept required parameter values as individual arguments, along with optional parameters as a keyword list.
+### Forex (FX) Example
 ```elixir
 iex> AlphaVantage.Forex.exchange_rate("USD", "CAD")
 {:ok,
@@ -106,8 +107,7 @@ iex> AlphaVantage.Forex.exchange_rate("USD", "CAD")
  }}
 ```
 
-### Cryptocurrencies
-Functions within the `AlphaVantage.Cryptocurrencies` module will accept required parameter values as individual arguments, along with optional parameters as a keyword list.
+### Cryptocurrencies Example
 ```elixir
 iex> AlphaVantage.Cryptocurrencies.monthly("BTC", "CNY")
 {:ok,
@@ -151,8 +151,7 @@ iex> AlphaVantage.Cryptocurrencies.monthly("BTC", "CNY")
  }}
 ```
 
-### Technical Indicators
-Functions within the `AlphaVantage.TechnicalIndicators` module will accept required parameter values as individual arguments, along with optional parameters as a keyword list.
+### Technical Indicators Example
 ```elixir
 iex> AlphaVantage.TechnicalIndicators.mom("AAPL", "monthly", 6, "close")
 {:ok,
@@ -179,8 +178,7 @@ iex> AlphaVantage.TechnicalIndicators.mom("AAPL", "monthly", 6, "close")
  }}
 ```
 
-### Sector Performances
-Functions within the `AlphaVantage.SectorPerformances` module will accept required parameter values as individual arguments, along with optional parameters as a keyword list.
+### Sector Performances Example
 ```elixir
 iex> AlphaVantage.SectorPerformances.sector()
 {:ok,
