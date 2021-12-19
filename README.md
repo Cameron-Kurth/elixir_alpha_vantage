@@ -7,12 +7,12 @@ A lightweight Elixir wrapper for the [Alpha Vantage API](https://www.alphavantag
 
 ## Installation
 
-Add :alpha_vantage to your depency list in the `mix.exs` file.
+Add `:alpha_vantage` to your depency list in the `mix.exs` file.
 
 ```elixir
 def deps do
   [
-    {:alpha_vantage, "~> 0.1"}
+    {:alpha_vantage, "~> 0.2"}
   ]
 end
 ```
