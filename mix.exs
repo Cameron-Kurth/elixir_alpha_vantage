@@ -11,6 +11,7 @@ defmodule AlphaVantage.MixProject do
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
+      dialyzer: dialyzer(),
       source_url: "https://github.com/Cameron-Kurth/alpha_vantage",
       docs: [
         extras: ["README.md"],
@@ -27,7 +28,16 @@ defmodule AlphaVantage.MixProject do
     [
       {:jason, "~> 1.0"},
       {:httpoison, "~> 1.6"},
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false}
+    ]
+  end
+
+  defp dialyzer do
+    [
+      plt_core_path: "priv/plts",
+      plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+      plt_add_apps: [:wx, :ex_unit]
     ]
   end
 
