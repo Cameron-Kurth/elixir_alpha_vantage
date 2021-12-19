@@ -6,13 +6,13 @@ defmodule AlphaVantage.MixProject do
       app: :alpha_vantage,
       name: "Alpha Vantage",
       description: "A lightweight Elixir wrapper for the Alpha Vantage API.",
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
       dialyzer: dialyzer(),
-      source_url: "https://github.com/Cameron-Kurth/alpha_vantage",
+      source_url: "https://github.com/Cameron-Kurth/elixir-alpha_vantage",
       docs: [
         extras: ["README.md"],
         main: "readme"
@@ -45,7 +45,7 @@ defmodule AlphaVantage.MixProject do
     [
       maintainers: ["Cameron Kurth"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/Cameron-Kurth/alpha_vantage"}
+      links: %{"GitHub" => "https://github.com/Cameron-Kurth/elixir-alpha_vantage"}
     ]
   end
 end
