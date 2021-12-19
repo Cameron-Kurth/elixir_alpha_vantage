@@ -41,6 +41,14 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
+  - `:outputsize`
+
+    By default, `outputsize: "compact"`.
+    Strings `"compact"` and `"full"` are accepted with the following specifications:
+    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"full"` returns the full-length intraday time series.
+    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
+
   """
   @spec intraday(String.t(), String.t(), Keyword.t()) ::
           {:error, String.t()} | {:ok, map} | {:ok, String.t()}
@@ -121,6 +129,14 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
+  - `:outputsize`
+
+    By default, `outputsize: "compact"`.
+    Strings `"compact"` and `"full"` are accepted with the following specifications:
+    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"full"` returns the full-length intraday time series.
+    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
+
   """
   @spec daily_adjusted(String.t(), Keyword.t()) ::
           {:error, String.t()} | {:ok, map} | {:ok, String.t()}
@@ -153,6 +169,14 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"map"` returns a map;
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
+
+  - `:outputsize`
+
+    By default, `outputsize: "compact"`.
+    Strings `"compact"` and `"full"` are accepted with the following specifications:
+    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"full"` returns the full-length intraday time series.
+    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
   @spec weekly(String.t(), Keyword.t()) ::
