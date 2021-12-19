@@ -26,13 +26,6 @@ defmodule AlphaVantage.StockTimeSeries do
 
   _Optional_ (accepted as a keyword list)
 
-  - `:output_size`
-
-    By default, `outputsize: "compact"`. Strings compact and full are accepted with the following specifications:
-    `"compact"` returns only the latest 100 data points in the intraday time series;
-    `"full"` returns the full-length intraday time series.
-    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
-
   - `:datatype`
 
     By default, `datatype: "map"`.
@@ -135,13 +128,6 @@ defmodule AlphaVantage.StockTimeSeries do
 
   _Optional_ (accepted as a keyword list)
 
-  - `:output_size`
-
-    By default, `outputsize: "compact"`. Strings compact and full are accepted with the following specifications:
-    `"compact"` returns only the latest 100 data points in the intraday time series;
-    `"full"` returns the full-length intraday time series.
-    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
-
   - `:datatype`
 
     By default, `datatype: "map"`.
@@ -149,6 +135,14 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"map"` returns a map;
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
+
+  - `:outputsize`
+
+    By default, `outputsize: "compact"`.
+    Strings `"compact"` and `"full"` are accepted with the following specifications:
+    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"full"` returns the full-length intraday time series.
+    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
   @spec daily(String.t(), Keyword.t()) ::
@@ -174,13 +168,6 @@ defmodule AlphaVantage.StockTimeSeries do
     For example: `"MSFT"`
 
   _Optional_ (accepted as a keyword list)
-
-  - `:output_size`
-
-    By default, `outputsize: "compact"`. Strings compact and full are accepted with the following specifications:
-    `"compact"` returns only the latest 100 data points in the intraday time series;
-    `"full"` returns the full-length intraday time series.
-    The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   - `:datatype`
 
