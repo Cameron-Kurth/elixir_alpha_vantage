@@ -9,6 +9,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns the annual and quarterly income statements for the company of interest, with normalized fields mapped to GAAP and IFRS taxonomies of the SEC.
   Data is generally refreshed on the same day a company reports its latest earnings and financials.
+
   Please reference https://www.alphavantage.co/documentation/#income-statement for more detail.
 
   ## Parameters
@@ -23,10 +24,7 @@ defmodule AlphaVantage.FundamentalData do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -42,6 +40,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns the annual and quarterly balance sheets for the company of interest, with normalized fields mapped to GAAP and IFRS taxonomies of the SEC.
   Data is generally refreshed on the same day a company reports its latest earnings and financials.
+
   Please reference https://www.alphavantage.co/documentation/#balance-sheet for more detail.
 
   ## Parameters
@@ -56,10 +55,7 @@ defmodule AlphaVantage.FundamentalData do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -76,6 +72,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns This API returns the annual and quarterly cash flow for the company of interest, with normalized fields mapped to GAAP and IFRS taxonomies of the SEC.
   Data is generally refreshed on the same day a company reports its latest earnings and financials.
+
   Please reference https://www.alphavantage.co/documentation/#cash-flow for more detail.
 
   ## Parameters
@@ -90,10 +87,7 @@ defmodule AlphaVantage.FundamentalData do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -109,6 +103,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns the annual and quarterly earnings (EPS) for the company of interest.
   Quarterly data also includes analyst estimates and surprise metrics.
+
   Please reference https://www.alphavantage.co/documentation/#earnings for more detail.
 
   ## Parameters
@@ -123,10 +118,7 @@ defmodule AlphaVantage.FundamentalData do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -142,6 +134,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns the company information, financial ratios, and other key metrics for the equity specified.
   Data is generally refreshed on the same day a company reports its latest earnings and financials.
+
   Please reference https://www.alphavantage.co/documentation/#company-overview for more detail.
 
   ## Parameters
@@ -156,10 +149,7 @@ defmodule AlphaVantage.FundamentalData do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -175,6 +165,7 @@ defmodule AlphaVantage.FundamentalData do
 
   Returns a list of active or delisted US stocks and ETFs, either as of the latest trading day or at a specific time in history.
   The endpoint is positioned to facilitate equity research on asset lifecycle and survivorship.
+
   Please reference https://www.alphavantage.co/documentation/#listing-status for more detail.
 
   Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.
@@ -212,6 +203,7 @@ defmodule AlphaVantage.FundamentalData do
   @doc """
 
   Returns a list of company earnings expected in the next 3, 6, or 12 months.
+
   Please reference https://www.alphavantage.co/documentation/#earnings-calendar for more detail.
 
   Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.
@@ -241,6 +233,7 @@ defmodule AlphaVantage.FundamentalData do
   @doc """
 
   Returns a list of IPOs expected in the next 3 months.
+
   Please reference https://www.alphavantage.co/documentation/#ipo-calendar for more detail.
 
   Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.

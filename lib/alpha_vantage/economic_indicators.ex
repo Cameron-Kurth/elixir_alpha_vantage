@@ -8,6 +8,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the annual and quarterly Real GDP of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#real-gdp for more detail.
 
   ## Parameters
@@ -15,17 +16,13 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:interval`
-
-    By default, `interval: "annual"`.
-    Strings `"quarterly"` and `"annual"` are accepted.
+    - `"quarterly"`
+    - `"annual"` (default)
 
   """
   @spec real_gdp(Keyword.t()) :: Gateway.response()
@@ -38,6 +35,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the quarterly Real GDP per Capita data of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#real-gdp-per-capita for more detail.
 
   ## Parameters
@@ -45,10 +43,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -63,6 +58,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the daily, weekly, and monthly US treasury yield of a given maturity timeline (e.g., 5 year, 30 year, etc).
+
   Please reference https://www.alphavantage.co/documentation/#treasury-yield for more detail.
 
   ## Parameters
@@ -70,22 +66,19 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:interval`
-
-    By default, `interval: "annual"`.
-    Strings `"quarterly"` and `"annual"` are accepted.
+    - `"quarterly"`
+    - `"annual"` (default)
 
   - `:maturity`
-
-    By default, `maturity: "10year"`.
-    Strings `"3month"`, `"5year"`, `"10year"`, and `"30year"` are accepted.
+    - `"3month"`
+    - `"5year"`
+    - `"10year"` (default)
+    - `"30year"`
 
   """
   @spec treasury_yield(Keyword.t()) :: Gateway.response()
@@ -98,6 +91,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the daily, weekly, and monthly federal funds rate (interest rate) of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#interest-rate for more detail.
 
   ## Parameters
@@ -105,17 +99,14 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:interval`
-
-    By default, `interval: "monthly"`.
-    Strings `"daily"`, `"weekly"`, and `"monthly"` are accepted.
+    - `"daily"`
+    - `"weekly"`
+    - `"monthly"` (default)
 
   """
   @spec interest_rate(Keyword.t()) :: Gateway.response()
@@ -128,6 +119,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly and semiannual consumer price index (CPI) of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#cpi for more detail.
 
   ## Parameters
@@ -135,17 +127,13 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:interval`
-
-    By default, `interval: "monthly"`.
-    Strings `"monthly"` and `"semiannual"` are accepted.
+    - `"monthly"` (default)
+    - `"semiannual"`
 
   """
   @spec cpi(Keyword.t()) :: Gateway.response()
@@ -158,6 +146,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the annual inflation rates (consumer prices) of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#inflation for more detail.
 
   ## Parameters
@@ -165,10 +154,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -183,6 +169,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly inflation expectation data of the United States, as measured by the median expected price change next 12 months according to the Surveys of Consumers by University of Michigan (Inflation Expectation© [MICH]), retrieved from FRED, Federal Reserve Bank of St. Louis.
+
   Please reference https://www.alphavantage.co/documentation/#inflation-expectation for more detail.
 
   ## Parameters
@@ -190,10 +177,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -208,6 +192,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly consumer sentiment and confidence data of the United States, as measured by the Surveys of Consumers by University of Michigan (Consumer Sentiment © [UMCSENT]), retrieved from FRED, Federal Reserve Bank of St. Louis.
+
   Please reference https://www.alphavantage.co/documentation/#consumer-sentiment for more detail.
 
   ## Parameters
@@ -215,10 +200,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -233,6 +215,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly Advance Retail Sales: Retail Trade data of the United States.
+
   Please reference https://www.alphavantage.co/documentation/#retail-sales for more detail.
 
   ## Parameters
@@ -240,10 +223,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -258,6 +238,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly manufacturers' new orders of durable goods in the United States.
+
   Please reference https://www.alphavantage.co/documentation/#durable-goods for more detail.
 
   ## Parameters
@@ -265,10 +246,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -284,6 +262,7 @@ defmodule AlphaVantage.EconomicIndicators do
 
   Returns the monthly unemployment data of the United States.
   The unemployment rate represents the number of unemployed as a percentage of the labor force. Labor force data are restricted to people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces.
+
   Please reference https://www.alphavantage.co/documentation/#unemployment for more detail.
 
   ## Parameters
@@ -291,10 +270,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -309,6 +285,7 @@ defmodule AlphaVantage.EconomicIndicators do
   @doc """
 
   Returns the monthly US All Employees: Total Nonfarm (commonly known as Total Nonfarm Payroll), a measure of the number of U.S. workers in the economy that excludes proprietors, private household employees, unpaid volunteers, farm employees, and the unincorporated self-employed.
+
   Please reference https://www.alphavantage.co/documentation/#nonfarm-payroll for more detail.
 
   ## Parameters
@@ -316,10 +293,7 @@ defmodule AlphaVantage.EconomicIndicators do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 

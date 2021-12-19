@@ -10,6 +10,7 @@ defmodule AlphaVantage.StockTimeSeries do
   @doc """
 
   Returns intraday time series (timestamp, open, high, low, close, volume) of the equity specified.
+
   Please reference https://www.alphavantage.co/documentation/#intraday for more detail.
 
   ## Parameters
@@ -29,19 +30,14 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:outputsize`
-
-    By default, `outputsize: "compact"`.
-    Strings `"compact"` and `"full"` are accepted with the following specifications:
-    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"compact"` returns only the latest 100 data points in the intraday time series (default);
     - `"full"` returns the full-length intraday time series.
+
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
@@ -57,6 +53,7 @@ defmodule AlphaVantage.StockTimeSeries do
   The intraday data is derived from the Securities Information Processor (SIP) market-aggregated data.
   You can query both raw (as-traded) and split/dividend-adjusted intraday data from this endpoint.
   Common use cases for this API include data visualization, trading simulation/backtesting, and machine learning and deep learning applications with a longer horizon.
+
   Please reference https://www.alphavantage.co/documentation/#intraday-extended for more detail.
 
   Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.
@@ -108,6 +105,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns daily time series (date, daily open, daily high, daily low, daily close, daily volume) of the global equity specified, covering 20+ years of historical data.
   The most recent data point is the prices and volume information of the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#daily for more detail.
 
   ## Parameters
@@ -122,19 +120,14 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:outputsize`
-
-    By default, `outputsize: "compact"`.
-    Strings `"compact"` and `"full"` are accepted with the following specifications:
-    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"compact"` returns only the latest 100 data points in the intraday time series (default);
     - `"full"` returns the full-length intraday time series.
+
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
@@ -148,6 +141,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns daily time series (date, daily open, daily high, daily low, daily close, daily volume, daily adjusted close, and split/dividend events) of the global equity specified, covering 20+ years of historical data.
   The most recent data point is the prices and volume information of the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#dailyadj for more detail.
 
   ## Parameters
@@ -162,19 +156,14 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:outputsize`
-
-    By default, `outputsize: "compact"`.
-    Strings `"compact"` and `"full"` are accepted with the following specifications:
-    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"compact"` returns only the latest 100 data points in the intraday time series (default);
     - `"full"` returns the full-length intraday time series.
+
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
@@ -188,6 +177,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns weekly time series (last trading day of each week, weekly open, weekly high, weekly low, weekly close, weekly volume) of the global equity specified, covering 20+ years of historical data.
   The latest data point is the prices and volume information for the week (or partial week) that contains the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#weekly for more detail.
 
   ## Parameters
@@ -202,19 +192,14 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:outputsize`
-
-    By default, `outputsize: "compact"`.
-    Strings `"compact"` and `"full"` are accepted with the following specifications:
-    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"compact"` returns only the latest 100 data points in the intraday time series (default);
     - `"full"` returns the full-length intraday time series.
+
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
@@ -228,6 +213,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns weekly adjusted time series (last trading day of each week, weekly open, weekly high, weekly low, weekly close, weekly adjusted close, weekly volume, weekly dividend) of the global equity specified, covering 20+ years of historical data.
   The latest data point is the prices and volume information for the week (or partial week) that contains the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#weeklyadj for more detail.
 
   ## Parameters
@@ -242,10 +228,7 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -260,6 +243,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns monthly time series (last trading day of each month, monthly open, monthly high, monthly low, monthly close, monthly volume) of the global equity specified, covering 20+ years of historical data.
   The latest data point is the prices and volume information for the month (or partial month) that contains the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#monthly for more detail.
 
   ## Parameters
@@ -274,10 +258,7 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -292,6 +273,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns monthly adjusted time series (last trading day of each month, monthly open, monthly high, monthly low, monthly close, monthly adjusted close, monthly volume, monthly dividend) of the equity specified, covering 20+ years of historical data.
   The latest data point is the prices and volume information for the month (or partial month) that contains the current trading day, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#monthlyadj for more detail.
 
   ## Parameters
@@ -306,10 +288,7 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -323,6 +302,7 @@ defmodule AlphaVantage.StockTimeSeries do
   @doc """
 
   Returns the latest price and volume information for a security of your choice.
+
   Please reference https://www.alphavantage.co/documentation/#latestprice for more detail.
 
   ## Parameters
@@ -337,10 +317,7 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -355,6 +332,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   Returns the best-matching symbols and market information based on keywords of your choice.
   The search results also contain match scores that provide you with the full flexibility to develop your own search and filtering logic.
+
   Please reference https://www.alphavantage.co/documentation/#symbolsearch for more detail.
 
   ## Parameters
@@ -369,10 +347,7 @@ defmodule AlphaVantage.StockTimeSeries do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 

@@ -9,6 +9,7 @@ defmodule AlphaVantage.Cryptocurrencies do
 
   Returns the realtime exchange rate for any pair of digital currency (e.g., Bitcoin) and physical currency (e.g., USD).
   Data returned for physical currency (Forex) pairs also include realtime bid and ask prices.
+
   Please reference https://www.alphavantage.co/documentation/#crypto-exchange for more detail.
 
   ## Parameters
@@ -28,10 +29,7 @@ defmodule AlphaVantage.Cryptocurrencies do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"` and `"json"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
 
     *Please note that `"csv"` is not yet supported by Alpha Vantage for this function.
@@ -52,6 +50,7 @@ defmodule AlphaVantage.Cryptocurrencies do
 
   Returns the real-time price of AVC with the United States Dollar (USD) as the base currency.
   The AVC price is streamed from the major decentralized exchange (DEX) Uniswap.
+
   Please reference https://www.alphavantage.co/documentation/#avc-price for more detail.
 
   ## Parameters
@@ -59,10 +58,7 @@ defmodule AlphaVantage.Cryptocurrencies do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -76,6 +72,7 @@ defmodule AlphaVantage.Cryptocurrencies do
   @doc """
 
   Returns intraday time series (timestamp, open, high, low, close, volume) of the cryptocurrency specified, updated realtime.
+
   Please reference https://www.alphavantage.co/documentation/#crypto-intraday for more detail.
 
   ## Parameters
@@ -102,19 +99,14 @@ defmodule AlphaVantage.Cryptocurrencies do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
   - `:outputsize`
-
-    By default, `outputsize: "compact"`.
-    Strings `"compact"` and `"full"` are accepted with the following specifications:
-    - `"compact"` returns only the latest 100 data points in the intraday time series;
+    - `"compact"` returns only the latest 100 data points in the intraday time series (default);
     - `"full"` returns the full-length intraday time series.
+
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
@@ -128,6 +120,7 @@ defmodule AlphaVantage.Cryptocurrencies do
 
   Returns the daily historical time series for a digital currency (e.g., BTC) traded on a specific market (e.g., CNY/Chinese Yuan), refreshed daily at midnight (UTC).
   Prices and volumes are quoted in both the market-specific currency and USD.
+
   Please reference https://www.alphavantage.co/documentation/#currency-daily for more detail.
 
   ## Parameters
@@ -143,16 +136,13 @@ defmodule AlphaVantage.Cryptocurrencies do
   - `:market`
 
     The exchange market of your choice.
-     It can be any of the market in the [market list](https://www.alphavantage.co/physical_currency_list/).
+    It can be any of the market in the [market list](https://www.alphavantage.co/physical_currency_list/).
     For example: `"CNY"`
 
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -167,6 +157,7 @@ defmodule AlphaVantage.Cryptocurrencies do
 
   Returns the weekly historical time series for a digital currency (e.g., BTC) traded on a specific market (e.g., CNY/Chinese Yuan), refreshed daily at midnight (UTC).
   Prices and volumes are quoted in both the market-specific currency and USD.
+
   Please reference https://www.alphavantage.co/documentation/#currency-weekly for more detail.
 
   ## Parameters
@@ -188,10 +179,7 @@ defmodule AlphaVantage.Cryptocurrencies do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
@@ -206,6 +194,7 @@ defmodule AlphaVantage.Cryptocurrencies do
 
   Returns the monthly historical time series for a digital currency (e.g., BTC) traded on a specific market (e.g., CNY/Chinese Yuan), refreshed daily at midnight (UTC).
   Prices and volumes are quoted in both the market-specific currency and USD.
+
   Please reference https://www.alphavantage.co/documentation/#currency-monthly for more detail.
 
   ## Parameters
@@ -227,10 +216,7 @@ defmodule AlphaVantage.Cryptocurrencies do
   _Optional_ (accepted as a keyword list)
 
   - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
+    - `"map"` returns a map (default);
     - `"json"` returns JSON format;
     - `"csv"` returns a CSV (comma separated value) file string.
 
