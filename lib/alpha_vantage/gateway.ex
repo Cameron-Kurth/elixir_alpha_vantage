@@ -68,9 +68,19 @@ defmodule AlphaVantage.Gateway do
 
   defp decode!(response_body, datatype) do
     case datatype do
-      "map" -> Jason.decode!(response_body)
-      "json" -> response_body
-      "csv" -> response_body
+      "csv" ->
+        response_body
+
+      "json" ->
+        response_body
+
+      "map" ->
+        response_body
+        |> Jason.decode()
+        |> case do
+          {:error, _} -> response_body
+          {:ok, decoded_response_body} -> decoded_response_body
+        end
     end
   end
 

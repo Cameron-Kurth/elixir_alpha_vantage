@@ -59,6 +59,67 @@ defmodule AlphaVantage.StockTimeSeries do
 
   @doc """
 
+  Returns historical intraday time series for the trailing 2 years, covering over 2 million data points per ticker.
+  The intraday data is derived from the Securities Information Processor (SIP) market-aggregated data.
+  You can query both raw (as-traded) and split/dividend-adjusted intraday data from this endpoint.
+  Common use cases for this API include data visualization, trading simulation/backtesting, and machine learning and deep learning applications with a longer horizon.
+  Please reference https://www.alphavantage.co/documentation/#intraday-extended for more detail.
+
+  Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.
+
+  ## Parameters
+
+  **Required**
+
+  - `:symbol`
+
+    The name of the security of your choice, provided as a string.
+    For example: `"MSFT"`
+
+  - `:interval`
+
+    Time interval between two consecutive data points in the time series.
+    The following values are supported and accepted as strings: `"1min"`, `"5min"`, `"15min"`, `"30min"`, `"60min"`, `"daily"`, `"weekly"`, `"monthly"`
+
+  - `:slice`
+
+    Two years of minute-level intraday data contains over 2 million data points, which can take up to Gigabytes of memory.
+    To ensure optimal API response speed, the trailing 2 years of intraday data is evenly divided into 24 "slices" - `"year1month1"`, `"year1month2"`, `"year1month3"`, ..., `"year1month11"`, `"year1month12"`, `"year2month1"`, `"year2month2"`, `"year2month3"`, ..., `"year2month11"`, `"year2month12"`.
+    Each slice is a 30-day window, with `"year1month1"` being the most recent and `"year2month12"` being the farthest from today.
+    By default, `slice: "year1month1"`.
+
+  _Optional_ (accepted as a keyword list)
+
+  - `:adjusted`
+
+    By default, `adjusted: true` and the output time series is adjusted by historical split and dividend events.
+    Set `adjusted: false` to query raw (as-traded) intraday values.
+
+  - `:datatype`
+
+    By default, `datatype: "map"`.
+    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
+    - `"map"` returns a map;
+    - `"json"` returns JSON format;
+    - `"csv"` returns a CSV (comma separated value) file string.
+
+  """
+  @spec intraday_extended_history(String.t(), String.t(), String.t(), Keyword.t()) ::
+          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  def intraday_extended_history(symbol, interval, slice, opts \\ []) do
+    params = [
+      function: "TIME_SERIES_INTRADAY_EXTENDED",
+      symbol: symbol,
+      interval: interval,
+      slice: slice,
+      datatype: "csv"
+    ]
+
+    AlphaVantage.query(Keyword.merge(params, opts))
+  end
+
+  @doc """
+
   Returns daily time series (date, daily open, daily high, daily low, daily close, daily volume) of the global equity specified, covering 20+ years of historical data.
   The most recent data point is the prices and volume information of the current trading day, updated realtime.
   Please reference https://www.alphavantage.co/documentation/#daily for more detail.
