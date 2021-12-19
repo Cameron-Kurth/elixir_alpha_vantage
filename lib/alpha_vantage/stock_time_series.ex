@@ -88,14 +88,6 @@ defmodule AlphaVantage.StockTimeSeries do
     By default, `adjusted: true` and the output time series is adjusted by historical split and dividend events.
     Set `adjusted: false` to query raw (as-traded) intraday values.
 
-  - `:datatype`
-
-    By default, `datatype: "map"`.
-    Strings `"map"`, `"json"`, and `"csv"` are accepted with the following specifications:
-    - `"map"` returns a map;
-    - `"json"` returns JSON format;
-    - `"csv"` returns a CSV (comma separated value) file string.
-
   """
   @spec intraday_extended_history(String.t(), String.t(), String.t(), Keyword.t()) ::
           {:error, String.t()} | {:ok, map} | {:ok, String.t()}
