@@ -3,6 +3,8 @@ defmodule AlphaVantage.TechnicalIndicators do
   A set of functions for fetching technical indicators from [Alpha Vantage](www.alphavantage.co/documentation/#technical-indicators).
   """
 
+  alias AlphaVantage.Gateway
+
   @doc """
 
   Returns the simple moving average (SMA) values for a given symbol, interval, time period, and series type.
@@ -44,7 +46,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec sma(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def sma(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "SMA",
@@ -98,7 +100,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ema(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "EMA",
@@ -152,7 +154,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec wma(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def wma(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "WMA",
@@ -206,7 +208,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec dema(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def dema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "DEMA",
@@ -260,7 +262,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec tema(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def tema(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TEMA",
@@ -314,7 +316,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec trima(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def trima(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TRIMA",
@@ -368,7 +370,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec kama(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def kama(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "KAMA",
@@ -422,7 +424,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec mama(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def mama(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MAMA",
@@ -466,7 +468,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec vwap(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def vwap(symbol, interval, opts \\ []) do
     params = [
       function: "VWAP",
@@ -518,7 +520,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec t3(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def t3(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "T3",
@@ -584,7 +586,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec macd(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def macd(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MACD",
@@ -665,7 +667,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec macdext(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def macdext(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MACDEXT",
@@ -731,7 +733,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec stoch(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def stoch(symbol, interval, opts \\ []) do
     params = [
       function: "STOCH",
@@ -786,7 +788,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec stochf(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def stochf(symbol, interval, opts \\ []) do
     params = [
       function: "STOCHF",
@@ -838,7 +840,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec rsi(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def rsi(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "RSI",
@@ -905,7 +907,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec stochrsi(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def stochrsi(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "STOCHRSI",
@@ -954,7 +956,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec willr(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def willr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "WILLR",
@@ -1002,7 +1004,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec adx(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def adx(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ADX",
@@ -1050,7 +1052,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec adxr(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def adxr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ADXR",
@@ -1111,7 +1113,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec apo(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def apo(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "APO",
@@ -1172,7 +1174,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ppo(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ppo(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "PPO",
@@ -1225,7 +1227,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec mom(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def mom(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MOM",
@@ -1269,7 +1271,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec bop(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def bop(symbol, interval, opts \\ []) do
     params = [
       function: "BOP",
@@ -1316,7 +1318,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec cci(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def cci(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "CCI",
@@ -1369,7 +1371,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec cmo(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def cmo(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "CMO",
@@ -1423,7 +1425,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec roc(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def roc(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "ROC",
@@ -1477,7 +1479,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec rocr(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def rocr(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "ROCR",
@@ -1526,7 +1528,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec aroon(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def aroon(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "AROON",
@@ -1574,7 +1576,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec aroonosc(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def aroonosc(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "AROONOSC",
@@ -1622,7 +1624,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec mfi(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def mfi(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MFI",
@@ -1675,7 +1677,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec trix(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def trix(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "TRIX",
@@ -1734,7 +1736,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ultosc(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ultosc(symbol, interval, opts \\ []) do
     params = [
       function: "ULTOSC",
@@ -1781,7 +1783,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec dx(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def dx(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "DX",
@@ -1829,7 +1831,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec minus_di(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def minus_di(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MINUS_DI",
@@ -1877,7 +1879,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec plus_di(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def plus_di(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "PLUS_DI",
@@ -1925,7 +1927,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec minus_dm(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def minus_dm(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MINUS_DM",
@@ -1973,7 +1975,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec plus_dm(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def plus_dm(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "PLUS_DM",
@@ -2041,7 +2043,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec bbands(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def bbands(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "BBANDS",
@@ -2096,7 +2098,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec midpoint(String.t(), String.t(), integer, String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def midpoint(symbol, interval, time_period, series_type, opts \\ []) do
     params = [
       function: "MIDPOINT",
@@ -2146,7 +2148,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec midprice(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def midprice(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "MIDPRICE",
@@ -2199,7 +2201,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec sar(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def sar(symbol, interval, opts \\ []) do
     params = [
       function: "SAR",
@@ -2241,7 +2243,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec trange(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def trange(symbol, interval, opts \\ []) do
     params = [
       function: "TRANGE",
@@ -2288,7 +2290,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec atr(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def atr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "ATR",
@@ -2336,7 +2338,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec natr(String.t(), String.t(), integer, Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def natr(symbol, interval, time_period, opts \\ []) do
     params = [
       function: "NATR",
@@ -2379,7 +2381,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ad(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ad(symbol, interval, opts \\ []) do
     params = [
       function: "AD",
@@ -2431,7 +2433,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec adosc(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def adosc(symbol, interval, opts \\ []) do
     params = [
       function: "ADOSC",
@@ -2473,7 +2475,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec obv(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def obv(symbol, interval, opts \\ []) do
     params = [
       function: "OBV",
@@ -2520,7 +2522,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_trendline(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_trendline(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_TRENDLINE",
@@ -2568,7 +2570,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_sine(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_sine(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_SINE",
@@ -2616,7 +2618,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_trendmode(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_trendmode(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_TRENDMODE",
@@ -2664,7 +2666,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_dcperiod(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_dcperiod(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_DCPERIOD",
@@ -2712,7 +2714,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_dcphase(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_dcphase(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_DCPHASE",
@@ -2760,7 +2762,7 @@ defmodule AlphaVantage.TechnicalIndicators do
 
   """
   @spec ht_phasor(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def ht_phasor(symbol, interval, series_type, opts \\ []) do
     params = [
       function: "HT_PHASOR",

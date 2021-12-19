@@ -3,6 +3,8 @@ defmodule AlphaVantage.Cryptocurrencies do
   A set of functions for fetching cryptocurrency data from [Alpha Vantage](www.alphavantage.co/documentation/#digital-currency).
   """
 
+  alias AlphaVantage.Gateway
+
   @doc """
 
   Returns the realtime exchange rate for any pair of digital currency (e.g., Bitcoin) and physical currency (e.g., USD).
@@ -35,8 +37,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     *Please note that `"csv"` is not yet supported by Alpha Vantage for this function.
 
   """
-  @spec exchange_rate(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec exchange_rate(String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def exchange_rate(from_currency, to_currency, opts \\ []) do
     params = [
       function: "CURRENCY_EXCHANGE_RATE",
@@ -66,8 +67,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec alpha_vantage_coin(Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec alpha_vantage_coin(Keyword.t()) :: Gateway.response()
   def alpha_vantage_coin(opts \\ []) do
     params = [function: "AVC_PRICE"]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -118,8 +118,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
-  @spec intraday(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec intraday(String.t(), String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def intraday(symbol, market, interval, opts \\ []) do
     params = [function: "CRYPTO_INTRADAY", symbol: symbol, market: market, interval: interval]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -158,8 +157,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec daily(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec daily(String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def daily(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_DAILY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -198,8 +196,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec weekly(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec weekly(String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def weekly(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_WEEKLY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -238,8 +235,7 @@ defmodule AlphaVantage.Cryptocurrencies do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec monthly(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec monthly(String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def monthly(symbol, market, opts \\ []) do
     params = [function: "DIGITAL_CURRENCY_MONTHLY", symbol: symbol, market: market]
     AlphaVantage.query(Keyword.merge(params, opts))

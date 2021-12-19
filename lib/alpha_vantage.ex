@@ -12,7 +12,7 @@ defmodule AlphaVantage do
   The Cryptocurrenies, Forex, StockTimeSeries, and TechnicalIndicators modules can be leveraged for more structured and explicit inputs, per function.
 
   """
-  @spec query(Keyword.t() | map) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec query(Keyword.t() | map) :: Gateway.response()
   def query(params \\ [])
   def query(params) when is_map(params), do: params |> Map.to_list() |> query
 

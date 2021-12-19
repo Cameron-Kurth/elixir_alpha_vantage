@@ -5,6 +5,8 @@ defmodule AlphaVantage.StockTimeSeries do
   Daily, weekly, and monthly time series contain 20+ years of historical data.
   """
 
+  alias AlphaVantage.Gateway
+
   @doc """
 
   Returns intraday time series (timestamp, open, high, low, close, volume) of the equity specified.
@@ -43,8 +45,7 @@ defmodule AlphaVantage.StockTimeSeries do
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
-  @spec intraday(String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec intraday(String.t(), String.t(), Keyword.t()) :: Gateway.response()
   def intraday(symbol, interval, opts \\ []) do
     params = [function: "TIME_SERIES_INTRADAY", symbol: symbol, interval: interval]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -90,7 +91,7 @@ defmodule AlphaVantage.StockTimeSeries do
 
   """
   @spec intraday_extended_history(String.t(), String.t(), String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def intraday_extended_history(symbol, interval, slice, opts \\ []) do
     params = [
       function: "TIME_SERIES_INTRADAY_EXTENDED",
@@ -137,8 +138,7 @@ defmodule AlphaVantage.StockTimeSeries do
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
-  @spec daily(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec daily(String.t(), Keyword.t()) :: Gateway.response()
   def daily(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_DAILY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -178,8 +178,7 @@ defmodule AlphaVantage.StockTimeSeries do
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
-  @spec daily_adjusted(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec daily_adjusted(String.t(), Keyword.t()) :: Gateway.response()
   def daily_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_DAILY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -219,8 +218,7 @@ defmodule AlphaVantage.StockTimeSeries do
     The `"compact"` option is recommended if you would like to reduce the data size of each API call.
 
   """
-  @spec weekly(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec weekly(String.t(), Keyword.t()) :: Gateway.response()
   def weekly(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_WEEKLY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -252,8 +250,7 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec weekly_adjusted(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec weekly_adjusted(String.t(), Keyword.t()) :: Gateway.response()
   def weekly_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_WEEKLY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -285,8 +282,7 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec monthly(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec monthly(String.t(), Keyword.t()) :: Gateway.response()
   def monthly(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_MONTHLY", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -318,8 +314,7 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec monthly_adjusted(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec monthly_adjusted(String.t(), Keyword.t()) :: Gateway.response()
   def monthly_adjusted(symbol, opts \\ []) do
     params = [function: "TIME_SERIES_MONTHLY_ADJUSTED", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -350,8 +345,7 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec quote(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec quote(String.t(), Keyword.t()) :: Gateway.response()
   def quote(symbol, opts \\ []) do
     params = [function: "GLOBAL_QUOTE", symbol: symbol]
     AlphaVantage.query(Keyword.merge(params, opts))
@@ -383,8 +377,7 @@ defmodule AlphaVantage.StockTimeSeries do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec search(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec search(String.t(), Keyword.t()) :: Gateway.response()
   def search(keywords, opts \\ []) do
     params = [function: "SYMBOL_SEARCH", keywords: keywords]
     AlphaVantage.query(Keyword.merge(params, opts))

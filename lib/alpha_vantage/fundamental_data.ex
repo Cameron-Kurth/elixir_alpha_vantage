@@ -3,6 +3,8 @@ defmodule AlphaVantage.FundamentalData do
   A set of functions for fetching various temporal dimensions covering key financial metrics, income statements, balance sheets, cash flow, and other fundamental data points from [Alpha Vantage](www.alphavantage.co/documentation/#fundamentals).
   """
 
+  alias AlphaVantage.Gateway
+
   @doc """
 
   Returns the annual and quarterly income statements for the company of interest, with normalized fields mapped to GAAP and IFRS taxonomies of the SEC.
@@ -29,8 +31,7 @@ defmodule AlphaVantage.FundamentalData do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec income_statement(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec income_statement(String.t(), Keyword.t()) :: Gateway.response()
   def income_statement(symbol, opts \\ []) do
     params = [function: "INCOME_STATEMENT", symbol: symbol]
 
@@ -64,7 +65,7 @@ defmodule AlphaVantage.FundamentalData do
 
   """
   @spec balance_sheet(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+          Gateway.response()
   def balance_sheet(symbol, opts \\ []) do
     params = [function: "BALANCE_SHEET", symbol: symbol]
 
@@ -97,8 +98,7 @@ defmodule AlphaVantage.FundamentalData do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec cash_flow(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec cash_flow(String.t(), Keyword.t()) :: Gateway.response()
   def cash_flow(symbol, opts \\ []) do
     params = [function: "CASH_FLOW", symbol: symbol]
 
@@ -131,8 +131,7 @@ defmodule AlphaVantage.FundamentalData do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec earnings(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec earnings(String.t(), Keyword.t()) :: Gateway.response()
   def earnings(symbol, opts \\ []) do
     params = [function: "EARNINGS", symbol: symbol]
 
@@ -165,8 +164,7 @@ defmodule AlphaVantage.FundamentalData do
     - `"csv"` returns a CSV (comma separated value) file string.
 
   """
-  @spec company_overview(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec company_overview(String.t(), Keyword.t()) :: Gateway.response()
   def company_overview(symbol, opts \\ []) do
     params = [function: "OVERVIEW", symbol: symbol]
 
@@ -204,8 +202,7 @@ defmodule AlphaVantage.FundamentalData do
     Set `state: "delisted"` to query a list of delisted assets.
 
   """
-  @spec listing_status(String.t(), Keyword.t()) ::
-          {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec listing_status(String.t(), Keyword.t()) :: Gateway.response()
   def listing_status(symbol, opts \\ []) do
     params = [function: "LISTING_STATUS", symbol: symbol]
 
@@ -234,7 +231,7 @@ defmodule AlphaVantage.FundamentalData do
     You may set `horizon: "6month"` or `horizon: "12month"` to query the earnings scheduled for the next 6 months or 12 months, respectively.
 
   """
-  @spec earnings_calendar(Keyword.t()) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec earnings_calendar(Keyword.t()) :: Gateway.response()
   def earnings_calendar(opts \\ []) do
     params = [function: "EARNINGS_CALENDAR"]
 
@@ -249,7 +246,7 @@ defmodule AlphaVantage.FundamentalData do
   Note: To ensure optimal API response time, this endpoint uses the CSV format which is more memory-efficient than JSON.
 
   """
-  @spec ipo_calendar(Keyword.t()) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec ipo_calendar(Keyword.t()) :: Gateway.response()
   def ipo_calendar(opts \\ []) do
     params = [function: "IPO_CALENDAR"]
 

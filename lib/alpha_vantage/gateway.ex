@@ -6,14 +6,15 @@ defmodule AlphaVantage.Gateway do
   @url "https://www.alphavantage.co/query"
 
   @type response ::
-          {:ok, payload :: map()}
+          {:ok, payload :: map() | String.t()}
+          | {:error, message :: String.t()}
           | {:error, :params, message :: String.t()}
           | {:error, :authentication, message :: String.t()}
           | {:error, :server_error, status_code :: integer()}
           | {:error, :timeout}
           | {:error, any()}
 
-  @spec query(Keyword.t() | map) :: {:error, String.t()} | {:ok, map} | {:ok, String.t()}
+  @spec query(Keyword.t() | map) :: response()
   def query(params) do
     datatype = Keyword.get(params, :datatype, "map")
 
