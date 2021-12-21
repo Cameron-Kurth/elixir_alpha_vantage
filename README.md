@@ -219,7 +219,7 @@ iex> AlphaVantage.SectorPerformances.sector()
 
 ## A Note on Tests
 
-Currently, the API key limitations have resulted in very little test coverage. Hopefully, we will be able to resolve this in the near future. In the meantime, please open issues for any problems encountered and we will look to address as promptly as possible.
+Currently, the free API key limitation of 5 requests per minute prevent the test suite from being run in its entirety, so please note that it is often easiest to run specific tests.
 
 ## Contributing
 

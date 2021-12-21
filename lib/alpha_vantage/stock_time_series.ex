@@ -25,7 +25,7 @@ defmodule AlphaVantage.StockTimeSeries do
   - `:interval`
 
     Time interval between two consecutive data points in the time series.
-    The following values are supported and accepted as strings: `"1min"`, `"5min"`, `"15min"`, `"30min"`, `"60min"`, `"daily"`, `"weekly"`, `"monthly"`
+    The following values are supported and accepted as strings: `"1min"`, `"5min"`, `"15min"`, `"30min"`, `"60min"`
 
   _Optional_ (accepted as a keyword list)
 
@@ -70,7 +70,7 @@ defmodule AlphaVantage.StockTimeSeries do
   - `:interval`
 
     Time interval between two consecutive data points in the time series.
-    The following values are supported and accepted as strings: `"1min"`, `"5min"`, `"15min"`, `"30min"`, `"60min"`, `"daily"`, `"weekly"`, `"monthly"`
+    The following values are supported and accepted as strings: `"1min"`, `"5min"`, `"15min"`, `"30min"`, `"60min"`
 
   - `:slice`
 

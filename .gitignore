@@ -23,7 +23,7 @@ erl_crash.dump
 alpha_vantage-*.tar
 
 # Ignore local dev config.
-/config/dev.exs
+/config/*.secret.exs
 
 # Dialyzer PLTs
 /priv/plts/*.plt
