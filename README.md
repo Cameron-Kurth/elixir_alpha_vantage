@@ -219,7 +219,7 @@ iex> AlphaVantage.SectorPerformances.sector()
 
 ## A Note on Tests
 
-Currently, the free API key limitation of 5 requests per minute prevent the test suite from being run in its entirety, so please note that it is often easiest to run specific tests.
+Currently, the free API key limitation of 5 requests per minute prevent the test suite from being run in its entirety, so please note that it is often easiest to run specific tests. This is a self-inflicted problem, as calling the API directly for tests was opted for in lieu of mocking responses in order to signal changes to the Alpha Vantage API. This approach is subject to change.
 
 ## Contributing
 
