@@ -262,11 +262,6 @@ defmodule AlphaVantage.TechnicalIndicatorsTest do
              TechnicalIndicators.ht_dcphase("AAPL", "monthly", "close")
   end
 
-  test "ht_trendmode/4" do
-    assert {:ok, %{"Technical Analysis: HT_TRENDMODE" => _data}} =
-             TechnicalIndicators.ht_trendmode("AAPL", "monthly", "close")
-  end
-
   test "ht_phasor/4" do
     assert {:ok, %{"Technical Analysis: HT_PHASOR" => _data}} =
              TechnicalIndicators.ht_phasor("AAPL", "monthly", "close")

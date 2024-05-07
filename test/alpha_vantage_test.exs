@@ -2,8 +2,9 @@ defmodule AlphaVantageTest do
   use ExUnit.Case
 
   describe "query/1" do
-    test "with invalid params returns {:error, message}" do
-      assert {:error, _message} = AlphaVantage.query(function: "GLOBAL_QUOTE", s: "AAPL")
+    test "with invalid params returns {:error, struct}" do
+      assert {:error, %AlphaVantage.Error{status_code: 400}} =
+               AlphaVantage.query(function: "GLOBAL_QUOTE", s: "AAPL")
     end
 
     test "with valid params returns {:ok, map}" do
@@ -18,7 +19,7 @@ defmodule AlphaVantageTest do
                AlphaVantage.query(function: "GLOBAL_QUOTE", symbol: "AAPL", datatype: "csv")
 
       assert is_binary(global_quote)
-      assert String.contains?("latestDay")
+      assert String.contains?(global_quote, "latestDay")
     end
 
     test "with valid params and json datatype param returns {:ok, json_string}" do
