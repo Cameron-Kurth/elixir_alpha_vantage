@@ -12,7 +12,7 @@ Add `:alpha_vantage` to your depency list in the `mix.exs` file.
 ```elixir
 def deps do
   [
-    {:alpha_vantage, "~> 0.2"}
+    {:alpha_vantage, "~> 0.3"}
   ]
 end
 ```
